@@ -7,6 +7,7 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  dio: ^3.0.10
   cupertino_icons: ^1.0.2
   device_apps: ^1.0.9
   loading_animations: ^2.2.0

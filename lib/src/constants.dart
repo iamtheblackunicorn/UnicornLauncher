@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:dio/dio.dart';
 
-String appVersion = '1.0.0';
-String imageLink = 'https://iamtheblackunicorn.github.io/assets/images/posts/postEight.jpg';
+String appTitle = 'Unicorn Launcher';
+Dio dio = Dio();
+String apiUrl = 'https://blckunicorn.art/assets/json/unicornlauncher/quotes.json';
+String imageLink = 'https://blckunicorn.art/assets/images/posts/postEight.jpg';
 Color accentColor = Color(0xFFDF0045);
 Color mainColor = Color(0xFF000000);
 double headingFontSize = 40;
