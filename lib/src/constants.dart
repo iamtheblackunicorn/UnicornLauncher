@@ -26,5 +26,5 @@ String dateFont = 'Ostrich';
 Color quoteColor = Color(0xFF000000);
 double quoteSize =20;
 double dateSize = 40;
-double appNameSize = 10;
+double appNameSize = 20;
 double appPadding = 15;

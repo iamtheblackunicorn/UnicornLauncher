@@ -1,3 +1,4 @@
+import 'dart:math';
 import 'constants.dart';
 import 'apiHandler.dart';
 import 'errorScreen.dart';
@@ -21,7 +22,7 @@ class HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     DateTime now = DateTime.now();
     String formattedTime = DateFormat('EEE d').format(now);
-    String formattedDate = DateFormat('MMM Y').format(now);
+    String formattedDate = DateFormat('MMM y').format(now);
     return FutureBuilder<Map<String, dynamic>>(
       future: quotesMap,
       builder: (BuildContext context, AsyncSnapshot<Map<String, dynamic>> snapshot) {
@@ -35,6 +36,10 @@ class HomeScreenState extends State<HomeScreen> {
           }
           else {
             Map<String, dynamic> quotes = snapshot.data;
+            int quoteLength = quotes.length;
+            int randomNumber = Random().nextInt(quoteLength);
+            String key = quotes.keys.elementAt(randomNumber);
+            String quote = quotes[key];
             return Scaffold(
               body: new Stack(
                 children: <Widget> [
@@ -49,52 +54,53 @@ class HomeScreenState extends State<HomeScreen> {
                       ),
                     ),
                   ),
-                  new Padding(
-                    padding: EdgeInsets.all(20),
-                    child: new Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                      children: <Widget> [
-                        new Padding(
-                          padding: EdgeInsets.all(20),
-                          child: new Text(
-                            '$formattedTime',
-                            textAlign: TextAlign.left,
-                            style: TextStyle(
-                              fontFamily: dateFont,
-                              fontSize: dateSize,
-                              color: accentColor
-                            )
+                  new Column(
+                    children: <Widget> [
+                    new SizedBox(height: 50),
+                    new Padding(
+                      padding: EdgeInsets.all(20),
+                      child: new Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: <Widget> [
+                          new Padding(
+                            padding: EdgeInsets.all(20),
+                            child: new Text(
+                              '$formattedTime',
+                              textAlign: TextAlign.left,
+                              style: TextStyle(
+                                fontFamily: dateFont,
+                                fontSize: dateSize,
+                                color: accentColor
+                              )
+                            ),
                           ),
-                        ),
-                        new Padding(
-                          padding: EdgeInsets.all(20),
-                          child: new Text(
-                            '$formattedDate',
-                            textAlign: TextAlign.left,
-                            style: TextStyle(
-                              fontFamily: dateFont,
-                              fontSize: dateSize,
-                              color: accentColor
+                          new Padding(
+                            padding: EdgeInsets.all(20),
+                            child: new Text(
+                              '$formattedDate',
+                              textAlign: TextAlign.left,
+                              style: TextStyle(
+                                fontFamily: dateFont,
+                                fontSize: dateSize,
+                                color: accentColor
+                              )
                             )
                           )
-                        )
-                      ]
-                    )
-                  ),
-                  new ListView.builder(
-                    itemCount: quotes.length,
-                    itemBuilder: (context, index) {
-                      String key = quotes.keys.elementAt(index);
-                      String quote = quotes[key];
-                      return Card(
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(0)
-                        ),
-                        color: Color(0xFFFFFFFF),
-                        margin: EdgeInsets.all(50),
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                          children: <Widget> [
+                        ]
+                      )
+                    ),
+                    new SizedBox(height: 100),
+                  new SizedBox(
+                    height: 300,
+                    child: new Card(
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(0)
+                      ),
+                      color: Color(0xFF000000),
+                      margin: EdgeInsets.all(50),
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        children: <Widget> [
                           new Padding(
                             padding: EdgeInsets.all(20),
                             child: new Text(
@@ -103,12 +109,12 @@ class HomeScreenState extends State<HomeScreen> {
                               style: TextStyle(
                                 fontFamily: quoteFont,
                                 fontSize: quoteSize,
-                                color: quoteColor
+                                color: Color(0xFFFFFFFF)
                               )
                             ),
                           ),
                           new Divider(
-                            color: quoteColor,
+                            color: Color(0xFFFFFFFF),
                             thickness: 1
                           ),
                           new Padding(
@@ -119,17 +125,19 @@ class HomeScreenState extends State<HomeScreen> {
                               style: TextStyle(
                                 fontFamily: quoteFont,
                                 fontSize: quoteSize,
-                                color: quoteColor
+                                color: Color(0xFFFFFFFF)
                               )
                             )
                           ),
                         ]
                       )
-                    );
-                  },
-                )
-              ]
-            ));
+                    )
+                  )])
+
+
+                ]
+              )
+            );
           }
         }
       }
