@@ -16,3 +16,7 @@ dev_dependencies:
     sdk: flutter
 flutter:
   uses-material-design: true
+  fonts:
+    - family: Garamond
+      fonts:
+        - asset: assets/Garamond.ttf

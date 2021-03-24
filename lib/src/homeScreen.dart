@@ -58,32 +58,26 @@ class HomeScreenState extends State<HomeScreen> {
                         margin: EdgeInsets.all(50),
                         child: Column(
                           children: <Widget> [
-                          new Padding(
-                            padding: EdgeInsets.all(10),
-                            child: new Text(
-                              '$quote',
-                              textAlign: TextAlign.left,
-                              /*style: TextStyle(
-                                fontFamily: defaultFont,
-                                fontSize: headingFontSize,
-                                color: mainColor
-                              )*/
-                            ),
-                          ),
+                          new Text(
+                            '$quote',
+                            textAlign: TextAlign.left,
+                            style: TextStyle(
+                              fontFamily: quoteFont,
+                              fontSize: quoteSize,
+                              color: quoteColor
+                            )
+                          )
                           new Divider(
-                            color: Color(0xFF000000),
-                            thickness: 3
+                            color: quoteColor,
+                            thickness: 1
                           ),
-                          new Padding(
-                            padding: EdgeInsets.all(10),
-                            child: new Text(
-                              '$key',
-                              textAlign: TextAlign.left,
-                              /*style: TextStyle(
-                                fontFamily: defaultFont,
-                                fontSize: headingFontSize,
-                                color: mainColor
-                              )*/
+                          new Text(
+                            '$key',
+                            textAlign: TextAlign.left,
+                            style: TextStyle(
+                              fontFamily: quoteFont,
+                              fontSize: quoteSize,
+                              color: quoteColor
                             )
                           )
                         ]

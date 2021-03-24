@@ -21,3 +21,6 @@ double extraRounding = 25;
 double headerImageDimensions = 200;
 double miscScreenSpacing = 170;
 double miscScreenIconSize = 150;
+String quoteFont = 'Garamond';
+Color quoteColor = Color(0xFF000000);
+double quoteFont = 30;
