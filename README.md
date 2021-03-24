@@ -1,3 +1,8 @@
+
+<p align="center">
+ <img src="https://github.com/iamtheblackunicorn/UnicornLauncher/raw/main/assets/images/unicornLauncherBanner.png"/>
+</p>
+
 # UNICORN LAUNCHER :unicorn:
 
 *An aesthetically-pleasing launcher for Unicorns! :unicorn:*
