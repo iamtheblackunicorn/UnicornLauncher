@@ -3,10 +3,10 @@ import 'loadingScreen.dart';
 import 'package:flutter/material.dart';
 import 'package:device_apps/device_apps.dart';
 
-class HomeScreen extends StatefulWidget {
-  HomeScreenState createState() => HomeScreenState();
+class AppScreen extends StatefulWidget {
+  AppScreenState createState() => AppScreenState();
 }
-class HomeScreenState extends State<HomeScreen> {
+class AppScreenState extends State<AppScreen> {
   Future<List<Application>> apps;
   @override
   void initState() {
@@ -58,7 +58,6 @@ class HomeScreenState extends State<HomeScreen> {
                     title: Text('$clearName'),
                     onTap: () async {
                       app.openApp();
-                      //print(appIcon.runtimeType);
                     },
                   );
                 },

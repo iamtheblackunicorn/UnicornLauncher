@@ -5,24 +5,6 @@ class ErrorScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context){
     return  Scaffold(
-      appBar:AppBar(
-        iconTheme: IconThemeData(
-          color: accentColor,
-        ),
-        title: new Row(
-          mainAxisAlignment: MainAxisAlignment.start,
-          children: <Widget>[
-            new Text(
-              'ERROR!',
-              style: TextStyle(
-                color: accentColor,
-                fontSize: stdFontSize
-              ),
-            ),
-          ]
-        ),
-        backgroundColor: mainColor
-      ),
       backgroundColor: mainColor,
       body: Center(
         child: Column(

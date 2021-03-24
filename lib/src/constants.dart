@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 
 String appVersion = '1.0.0';
-String appTitle = 'The Mansion';
-String headingFont = 'Ostrich';
+String imageLink = 'https://iamtheblackunicorn.github.io/assets/images/posts/postEight.jpg';
 Color accentColor = Color(0xFFDF0045);
 Color mainColor = Color(0xFF000000);
 double headingFontSize = 40;
