@@ -1,5 +1,4 @@
-import 'src/apiHandler.dart';
-import 'src/homeScreen.dart';
+import 'src/titleScreen.dart';
 import 'src/constants.dart';
 import 'package:flutter/material.dart';
 
@@ -8,7 +7,7 @@ void main() {
     MaterialApp(
       debugShowCheckedModeBanner: false,
       title: appTitle,
-      home: HomeScreen(apistorage: APIStorage())
+      home: TitleView()
     )
   );
 }

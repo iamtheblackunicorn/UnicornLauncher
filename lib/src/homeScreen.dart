@@ -3,6 +3,7 @@ import 'apiHandler.dart';
 import 'errorScreen.dart';
 import 'loadingScreen.dart';
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 
 class HomeScreen extends StatefulWidget {
   final APIStorage apistorage;
@@ -18,6 +19,9 @@ class HomeScreenState extends State<HomeScreen> {
   }
   @override
   Widget build(BuildContext context) {
+    DateTime now = DateTime.now();
+    String formattedTime = DateFormat('EEE d').format(now);
+    String formattedDate = DateFormat('MMM Y').format(now);
     return FutureBuilder<Map<String, dynamic>>(
       future: quotesMap,
       builder: (BuildContext context, AsyncSnapshot<Map<String, dynamic>> snapshot) {
@@ -45,6 +49,38 @@ class HomeScreenState extends State<HomeScreen> {
                       ),
                     ),
                   ),
+                  new Padding(
+                    padding: EdgeInsets.all(20),
+                    child: new Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: <Widget> [
+                        new Padding(
+                          padding: EdgeInsets.all(20),
+                          child: new Text(
+                            '$formattedTime',
+                            textAlign: TextAlign.left,
+                            style: TextStyle(
+                              fontFamily: dateFont,
+                              fontSize: dateSize,
+                              color: accentColor
+                            )
+                          ),
+                        ),
+                        new Padding(
+                          padding: EdgeInsets.all(20),
+                          child: new Text(
+                            '$formattedDate',
+                            textAlign: TextAlign.left,
+                            style: TextStyle(
+                              fontFamily: dateFont,
+                              fontSize: dateSize,
+                              color: accentColor
+                            )
+                          )
+                        )
+                      ]
+                    )
+                  ),
                   new ListView.builder(
                     itemCount: quotes.length,
                     itemBuilder: (context, index) {
@@ -57,29 +93,36 @@ class HomeScreenState extends State<HomeScreen> {
                         color: Color(0xFFFFFFFF),
                         margin: EdgeInsets.all(50),
                         child: Column(
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                           children: <Widget> [
-                          new Text(
-                            '$quote',
-                            textAlign: TextAlign.left,
-                            style: TextStyle(
-                              fontFamily: quoteFont,
-                              fontSize: quoteSize,
-                              color: quoteColor
-                            )
-                          )
+                          new Padding(
+                            padding: EdgeInsets.all(20),
+                            child: new Text(
+                              '$quote',
+                              textAlign: TextAlign.left,
+                              style: TextStyle(
+                                fontFamily: quoteFont,
+                                fontSize: quoteSize,
+                                color: quoteColor
+                              )
+                            ),
+                          ),
                           new Divider(
                             color: quoteColor,
                             thickness: 1
                           ),
-                          new Text(
-                            '$key',
-                            textAlign: TextAlign.left,
-                            style: TextStyle(
-                              fontFamily: quoteFont,
-                              fontSize: quoteSize,
-                              color: quoteColor
+                          new Padding(
+                            padding: EdgeInsets.all(10),
+                            child: new Text(
+                              '$key',
+                              textAlign: TextAlign.left,
+                              style: TextStyle(
+                                fontFamily: quoteFont,
+                                fontSize: quoteSize,
+                                color: quoteColor
+                              )
                             )
-                          )
+                          ),
                         ]
                       )
                     );

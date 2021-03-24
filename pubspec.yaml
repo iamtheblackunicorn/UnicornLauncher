@@ -11,6 +11,7 @@ dependencies:
   cupertino_icons: ^1.0.2
   device_apps: ^1.0.9
   loading_animations: ^2.2.0
+  intl: ^0.17.0
 dev_dependencies:
   flutter_test:
     sdk: flutter
@@ -19,4 +20,7 @@ flutter:
   fonts:
     - family: Garamond
       fonts:
-        - asset: assets/Garamond.ttf
+        - asset: assets/fonts/Garamond.ttf
+    - family: Ostrich
+      fonts:
+        - asset: assets/fonts/Ostrich.ttf
