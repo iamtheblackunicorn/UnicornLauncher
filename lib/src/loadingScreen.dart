@@ -19,14 +19,28 @@ class LoadingScreenState extends State<LoadingScreen> {
     return  Scaffold(
       backgroundColor: mainColor,
       body: Center(
-        child: Column(
+        child: new Stack(
           children: <Widget> [
-            new SizedBox(
-              height: miscScreenSpacing
+            new Container(
+              decoration: new BoxDecoration(
+                image: new DecorationImage(
+                  image: new NetworkImage(
+                    imageUrl
+                  ),
+                  fit: BoxFit.cover
+                ),
+              ),
             ),
-            new LoadingBouncingGrid.circle(
-              size: miscScreenIconSize,
-              backgroundColor: accentColor,
+            new Column(
+              children: <Widget> [
+                new SizedBox(
+                  height: miscScreenSpacing
+                ),
+                new LoadingBouncingGrid.circle(
+                  size: miscScreenIconSize,
+                  backgroundColor: accentColor,
+                )
+              ]
             )
           ]
         )

@@ -17,28 +17,41 @@ class ErrorScreenState extends State<ErrorScreen> {
     return  Scaffold(
       backgroundColor: mainColor,
       body: Center(
-        child: Column(
+        child: new Stack(
           children: <Widget> [
-            new SizedBox(
-              height: miscScreenSpacing
-            ),
-            new Icon(
-              Icons.warning,
-              color: accentColor,
-              size: miscScreenIconSize,
-            ),
-            new Text(
-              'Could not load apps!',
-              textAlign: TextAlign.center,
-              style: TextStyle(
-                color: accentColor,
-                fontWeight: FontWeight.bold,
-                fontSize: stdFontSize
+            new Container(
+              decoration: new BoxDecoration(
+                image: new DecorationImage(
+                  image: new NetworkImage(
+                    imageUrl
+                  ),
+                  fit: BoxFit.cover
+                ),
               ),
-            )
-          ]
-        )
-      )
+            ),
+            new Column(
+              children: <Widget> [
+              new SizedBox(
+                height: miscScreenSpacing
+              ),
+              new Icon(
+                Icons.warning,
+                color: accentColor,
+                size: miscScreenIconSize,
+              ),
+              new Text(
+                'Could not load apps!',
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  color: accentColor,
+                  fontWeight: FontWeight.bold,
+                  fontSize: stdFontSize
+                ),
+              )
+            ]
+          )
+        ]
+      ))
     );
   }
 }

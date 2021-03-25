@@ -1,3 +1,4 @@
+import 'dart:async';
 import 'homeScreen.dart';
 import 'appScreen.dart';
 import 'apiHandler.dart';
@@ -12,11 +13,21 @@ class TitleView extends StatefulWidget {
 class TitleViewState extends State<TitleView> {
   PageController pageController = PageController(initialPage: 0,);
   Future<Map<String, dynamic> myWallpapers;
+
+  @override
+  void initState(){
+    super.initState();
+    myWallpapers = widget.wallpaperapi.readCounter();
+    seondUpdate = Timer.periodic(Duration(seconds: 300), (Timer t) {
+      setState(() {
+        myWallpapers = widget.wallpaperapi.readCounter();
+      });
+    });
+  }
   @override
   void dispose() {
     pageController.dispose();
     super.dispose();
-    myWallpapers = widget.wallpaperapi.readCounter();
   }
   @override
   Widget build(BuildContext context) {
