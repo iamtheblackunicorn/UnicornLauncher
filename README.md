@@ -20,7 +20,7 @@ D'you remember FlowHome? I do and it was dope! So, I wanted to create something 
 
 ## Download :inbox_tray:
 
-- *Dark Horse* (v.1.0.0): [Download](https://github.com/iamtheblackunicorn/UnicornLauncher/releases/download/v.1.0.0/UnicornLauncher-v1.0.0-DarkHorse-Release.apk) (17.7 MB)
+- *Dark Horse* (v.1.0.0): [Download](https://github.com/iamtheblackunicorn/UnicornLauncher/releases/download/v.1.0.0/UnicornLauncher-v1.0.0-DarkHorse-Release.apk) (16.9 MB)
 
 ## Building :hammer:
 
