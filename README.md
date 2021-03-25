@@ -11,6 +11,10 @@
 
 D'you remember FlowHome? I do and it was dope! So, I wanted to create something similar to FlowHome. *Unicorn Launcher* is my attempt at re-creating this iconic launcher! This project is still heavily work in progress!
 
+## Download :inbox_tray:
+
+- *Dark Horse* (v.1.0.0): [Download](https://github.com/iamtheblackunicorn/UnicornLauncher/releases/download/v.1.0.0/UnicornLauncher-v1.0.0-DarkHorse-Release.apk) (17.2 MB)
+
 ## Building :hammer:
 
 Make sure that you have the following programs installed:
