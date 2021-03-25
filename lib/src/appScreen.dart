@@ -79,8 +79,16 @@ class AppScreenState extends State<AppScreen> {
                     }
                   );
                 },
-              )
-            ]));
+              ),
+            ]),
+            floatingActionButton: FloatingActionButton(
+              tooltip: 'Search',
+              backgroundColor: Color(0xFF000000),
+              child: Icon(
+                Icons.search,
+                color: Color(0xFFFFFFFF)
+              ),
+            ));
           }
         }
       }
