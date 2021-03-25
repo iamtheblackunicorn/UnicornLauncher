@@ -9,7 +9,14 @@
 
 ## About :books:
 
-D'you remember FlowHome? I do and it was dope! So, I wanted to create something similar to FlowHome. *Unicorn Launcher* is my attempt at re-creating this iconic launcher! This project is still heavily work in progress!
+D'you remember FlowHome? I do and it was dope! So, I wanted to create something similar to FlowHome. *Unicorn Launcher* is my attempt at re-creating this iconic launcher!
+
+## Features :black_heart:
+
+- Carefully-curated quotes by famous people on your homescreen.
+- Carefully-curated sexy wallpapers that alternate every 5 minutes.
+- Simplistic layout.
+- Modern, elegant design.
 
 ## Download :inbox_tray:
 
