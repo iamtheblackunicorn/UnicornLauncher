@@ -6,13 +6,17 @@ import 'package:flutter/material.dart';
 import 'package:device_apps/device_apps.dart';
 
 class AppScreen extends StatefulWidget {
+  final String imageLink;
+  AppScreen({Key key, @required this.imageLink}) : super(key: key);
   AppScreenState createState() => AppScreenState();
 }
 class AppScreenState extends State<AppScreen> {
   Future<List<Application>> apps;
+  String imageUrl;
   @override
   void initState() {
     super.initState();
+    imageUrl = widget.imageLink;
     apps = DeviceApps.getInstalledApplications(
       onlyAppsWithLaunchIntent: true,
       includeSystemApps: true,
@@ -25,11 +29,11 @@ class AppScreenState extends State<AppScreen> {
       future: apps,
       builder: (BuildContext context, AsyncSnapshot<List<Application>> snapshot) {
         if (snapshot.connectionState == ConnectionState.waiting){
-          return LoadingScreen();
+          return LoadingScreen(imageLink: imageUrl);
         }
         else {
           if (snapshot.hasError) {
-            return ErrorScreen();
+            return ErrorScreen(imageLink: imageUrl);
           }
           else {
             List<Application> userApps = snapshot.data;
@@ -42,7 +46,7 @@ class AppScreenState extends State<AppScreen> {
                   decoration: new BoxDecoration(
                     image: new DecorationImage(
                       image: new NetworkImage(
-                        imageLink,
+                        imageUrl,
                       ),
                       fit: BoxFit.cover
                     ),

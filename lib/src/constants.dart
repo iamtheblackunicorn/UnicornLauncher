@@ -3,8 +3,8 @@ import 'package:dio/dio.dart';
 
 String appTitle = 'Unicorn Launcher';
 Dio dio = Dio();
-String apiUrl = 'https://blckunicorn.art/assets/json/unicornlauncher/quotes.json';
-String imageLink = 'https://blckunicorn.art/assets/images/posts/postEight.jpg';
+String quotesAPI = 'https://blckunicorn.art/assets/unicornlauncher/api/quotes.json';
+String wallpapersAPI = 'https://blckunicorn.art/assets/unicornlauncher/api/wallpapers.json';
 Color accentColor = Color(0xFFFFFFFF);
 Color mainColor = Color(0xFF000000);
 double headingFontSize = 40;

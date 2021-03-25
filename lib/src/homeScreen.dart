@@ -8,15 +8,18 @@ import 'package:intl/intl.dart';
 
 class HomeScreen extends StatefulWidget {
   final APIStorage apistorage;
-  HomeScreen({Key key, @required this.apistorage}) : super(key: key);
+  final String imageLink;
+  HomeScreen({Key key, @required this.apistorage, @required this.imageLink}) : super(key: key);
   HomeScreenState createState() => HomeScreenState();
 }
 class HomeScreenState extends State<HomeScreen> {
   Future<Map<String, dynamic>> quotesMap;
+  String imageUrl;
   @override
   void initState() {
     super.initState();
     quotesMap = widget.apistorage.readCounter();
+    imageUrl = widget.imageLink;
   }
   @override
   Widget build(BuildContext context) {
@@ -27,12 +30,12 @@ class HomeScreenState extends State<HomeScreen> {
       future: quotesMap,
       builder: (BuildContext context, AsyncSnapshot<Map<String, dynamic>> snapshot) {
         if (snapshot.connectionState == ConnectionState.waiting){
-          return LoadingScreen();
+          return LoadingScreen(imageLink: imageUrl);
         }
         else {
           if (snapshot.hasError) {
             print(snapshot.error);
-            return ErrorScreen();
+            return ErrorScreen(imageLink: imageUrl);
           }
           else {
             Map<String, dynamic> quotes = snapshot.data;
@@ -48,7 +51,7 @@ class HomeScreenState extends State<HomeScreen> {
                     decoration: new BoxDecoration(
                       image: new DecorationImage(
                         image: new NetworkImage(
-                          imageLink
+                          imageUrl
                         ),
                         fit: BoxFit.cover
                       ),

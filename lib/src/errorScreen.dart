@@ -1,7 +1,17 @@
 import 'constants.dart';
 import 'package:flutter/material.dart';
-
-class ErrorScreen extends StatelessWidget {
+class ErrorScreen extends StatefulWidget {
+  final String imageLink;
+  ErrorScreen({Key key, @required this.imageLink}) : super(key: key);
+  ErrorScreenState createState() => ErrorScreenState();
+}
+class ErrorScreenState extends State<ErrorScreen> {
+  String imageUrl;
+  @override
+  void initState() {
+    super.initState();
+    imageUrl = widget.imageLink;
+  }
   @override
   Widget build(BuildContext context){
     return  Scaffold(
