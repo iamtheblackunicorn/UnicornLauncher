@@ -15,7 +15,7 @@ class APIStorage {
       return response.data;
     } catch (e) {
       Response response = await dio.get(
-        apiUrl,
+        quotesAPI,
         options: Options(
           responseType: ResponseType.json,
           followRedirects: true,
@@ -45,7 +45,7 @@ class WallpaperAPIStorage {
       return response.data;
     } catch (e) {
       Response response = await dio.get(
-        apiUrl,
+        wallpapersAPI,
         options: Options(
           responseType: ResponseType.json,
           followRedirects: true,

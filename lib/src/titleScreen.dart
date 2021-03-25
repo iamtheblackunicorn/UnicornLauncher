@@ -1,8 +1,12 @@
+import 'dart:math';
 import 'dart:async';
-import 'homeScreen.dart';
 import 'appScreen.dart';
 import 'apiHandler.dart';
+import 'homeScreen.dart';
+import 'errorScreen.dart';
+import 'loadingScreen.dart';
 import 'package:flutter/material.dart';
+
 class TitleView extends StatefulWidget {
   final APIStorage apistorage;
   final WallpaperAPIStorage wallpaperapi;
@@ -12,13 +16,13 @@ class TitleView extends StatefulWidget {
 }
 class TitleViewState extends State<TitleView> {
   PageController pageController = PageController(initialPage: 0,);
-  Future<Map<String, dynamic> myWallpapers;
-
+  Future<Map<String, dynamic>> myWallpapers;
+  var secondUpdate;
   @override
   void initState(){
     super.initState();
     myWallpapers = widget.wallpaperapi.readCounter();
-    seondUpdate = Timer.periodic(Duration(seconds: 300), (Timer t) {
+    secondUpdate = Timer.periodic(Duration(seconds: 300), (Timer t) {
       setState(() {
         myWallpapers = widget.wallpaperapi.readCounter();
       });
@@ -58,6 +62,6 @@ class TitleViewState extends State<TitleView> {
           }
         }
       }
-    )
+    );
   }
 }

@@ -2,7 +2,7 @@ import 'constants.dart';
 import 'package:flutter/material.dart';
 import 'package:loading_animations/loading_animations.dart';
 
-class LoadingScreenScreen extends StatefulWidget {
+class LoadingScreen extends StatefulWidget {
   final String imageLink;
   LoadingScreen({Key key, @required this.imageLink}) : super(key: key);
   LoadingScreenState createState() => LoadingScreenState();
