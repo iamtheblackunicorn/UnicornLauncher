@@ -39,12 +39,12 @@ class TitleViewState extends State<TitleView> {
       future: myWallpapers,
       builder: (BuildContext context, AsyncSnapshot<Map<String, dynamic>> snapshot) {
         if (snapshot.connectionState == ConnectionState.waiting){
-          return LoadingScreen(imageLink: imageUrl);
+          return LoadingScreen(imageLink: defaultImage);
         }
         else {
           if (snapshot.hasError) {
             print(snapshot.error);
-            return ErrorScreen(imageLink: imageUrl);
+            return ErrorScreen(imageLink: defaultImage);
           }
           else {
             Map<String, dynamic> wallpapers = snapshot.data;
