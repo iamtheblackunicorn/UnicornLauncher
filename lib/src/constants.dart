@@ -18,7 +18,6 @@ double dateSize = 40;
 double appNameSize = 20;
 double appPadding = 15;
 int defaultInterval = 300;
-double blurRadius = 10.0;
 double appIconSize = 35;
 String errorAppMessage = 'Could not load apps!';
 double stdPadding = 20;

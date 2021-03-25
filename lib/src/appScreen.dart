@@ -51,11 +51,6 @@ class AppScreenState extends State<AppScreen> {
                       fit: BoxFit.cover
                     ),
                   ),
-                  child: ClipRRect(
-                    child: BackdropFilter(
-                      filter: ImageFilter.blur(sigmaX: blurRadius, sigmaY: blurRadius),
-                    )
-                  )
                 ),
                 new ListView.builder(
                 itemCount: userApps.length,
