@@ -31,7 +31,9 @@ class LoadingScreenState extends State<LoadingScreen> {
                 ),
               ),
             ),
+            new Center(child:
             new Column(
+              mainAxisSize: MainAxisSize.min,
               children: <Widget> [
                 new SizedBox(
                   height: miscScreenSpacing
@@ -41,7 +43,7 @@ class LoadingScreenState extends State<LoadingScreen> {
                   backgroundColor: accentColor,
                 )
               ]
-            )
+            ))
           ]
         )
       )

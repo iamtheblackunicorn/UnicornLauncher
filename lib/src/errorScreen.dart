@@ -29,7 +29,9 @@ class ErrorScreenState extends State<ErrorScreen> {
                 ),
               ),
             ),
+            new Center(child:
             new Column(
+              mainAxisSize: MainAxisSize.min,
               children: <Widget> [
               new SizedBox(
                 height: miscScreenSpacing
@@ -45,11 +47,12 @@ class ErrorScreenState extends State<ErrorScreen> {
                 style: TextStyle(
                   color: accentColor,
                   fontWeight: FontWeight.bold,
-                  fontSize: stdFontSize
+                  fontSize: stdFontSize,
+                  fontFamily: dateFont
                 ),
               )
             ]
-          )
+          ))
         ]
       ))
     );
