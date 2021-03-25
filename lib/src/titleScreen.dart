@@ -16,7 +16,7 @@ class TitleView extends StatefulWidget {
   TitleViewState createState() => TitleViewState();
 }
 class TitleViewState extends State<TitleView> {
-  PageController pageController = PageController(initialPage: 0,);
+  PageController pageController = PageController(initialPage: stdRounding);
   Future<Map<String, dynamic>> myWallpapers;
   var secondUpdate;
   @override

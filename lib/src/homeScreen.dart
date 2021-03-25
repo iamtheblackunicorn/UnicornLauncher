@@ -24,8 +24,8 @@ class HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     DateTime now = DateTime.now();
-    String formattedTime = DateFormat('EEE d').format(now);
-    String formattedDate = DateFormat('MMM y').format(now);
+    String formattedTime = DateFormat('$dayDay').format(now);
+    String formattedDate = DateFormat('$monthYear').format(now);
     return FutureBuilder<Map<String, dynamic>>(
       future: quotesMap,
       builder: (BuildContext context, AsyncSnapshot<Map<String, dynamic>> snapshot) {
@@ -59,14 +59,14 @@ class HomeScreenState extends State<HomeScreen> {
                   ),
                   new Column(
                     children: <Widget> [
-                    new SizedBox(height: 50),
+                    new SizedBox(height: miscScreenSpacing),
                     new Padding(
-                      padding: EdgeInsets.all(20),
+                      padding: EdgeInsets.all(stdPadding),
                       child: new Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: <Widget> [
                           new Padding(
-                            padding: EdgeInsets.all(20),
+                            padding: EdgeInsets.all(stdPadding),
                             child: new Text(
                               '$formattedTime',
                               textAlign: TextAlign.left,
@@ -78,7 +78,7 @@ class HomeScreenState extends State<HomeScreen> {
                             ),
                           ),
                           new Padding(
-                            padding: EdgeInsets.all(20),
+                            padding: EdgeInsets.all(stdPadding),
                             child: new Text(
                               '$formattedDate',
                               textAlign: TextAlign.left,
@@ -92,20 +92,20 @@ class HomeScreenState extends State<HomeScreen> {
                         ]
                       )
                     ),
-                    new SizedBox(height: 100),
+                    new SizedBox(height: spacerHeight),
                   new SizedBox(
                     height: 300,
                     child: new Card(
                       shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(0)
+                        borderRadius: BorderRadius.circular(stdRounding)
                       ),
                       color: mainColor,
-                      margin: EdgeInsets.all(50),
+                      margin: EdgeInsets.all(miscScreenSpacing),
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         children: <Widget> [
                           new Padding(
-                            padding: EdgeInsets.all(20),
+                            padding: EdgeInsets.all(stdPadding),
                             child: new Text(
                               '$quote',
                               textAlign: TextAlign.left,
@@ -118,10 +118,10 @@ class HomeScreenState extends State<HomeScreen> {
                           ),
                           new Divider(
                             color: accentColor,
-                            thickness: 1
+                            thickness: stdThickness
                           ),
                           new Padding(
-                            padding: EdgeInsets.all(10),
+                            padding: EdgeInsets.all(minPadding),
                             child: new Text(
                               '$key',
                               textAlign: TextAlign.left,
