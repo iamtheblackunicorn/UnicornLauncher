@@ -23,7 +23,7 @@ class TitleViewState extends State<TitleView> {
   void initState(){
     super.initState();
     myWallpapers = widget.wallpaperapi.readCounter();
-    secondUpdate = Timer.periodic(Duration(seconds: 300), (Timer t) {
+    secondUpdate = Timer.periodic(Duration(seconds: defaultInterval), (Timer t) {
       setState(() {
         myWallpapers = widget.wallpaperapi.readCounter();
       });

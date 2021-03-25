@@ -53,7 +53,7 @@ class AppScreenState extends State<AppScreen> {
                   ),
                   child: ClipRRect(
                     child: BackdropFilter(
-                      filter: ImageFilter.blur(sigmaX: 10.0, sigmaY: 10.0),
+                      filter: ImageFilter.blur(sigmaX: blurRadius, sigmaY: blurRadius),
                     )
                   )
                 ),
@@ -63,7 +63,7 @@ class AppScreenState extends State<AppScreen> {
                   Application app = userApps[index];
                   String clearName = app.appName;
                   String packageName = app.packageName;
-                  var appIcon = Image.memory((app as ApplicationWithIcon).icon, width: 32);
+                  var appIcon = Image.memory((app as ApplicationWithIcon).icon, width: appIconSize);
                   return ListTile(
                     leading: appIcon,
                     title: new Text(
@@ -80,15 +80,7 @@ class AppScreenState extends State<AppScreen> {
                   );
                 },
               ),
-            ]),
-            floatingActionButton: FloatingActionButton(
-              tooltip: 'Search',
-              backgroundColor: Color(0xFF000000),
-              child: Icon(
-                Icons.search,
-                color: Color(0xFFFFFFFF)
-              ),
-            ));
+            ]));
           }
         }
       }

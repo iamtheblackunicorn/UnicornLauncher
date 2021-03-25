@@ -99,7 +99,7 @@ class HomeScreenState extends State<HomeScreen> {
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(0)
                       ),
-                      color: Color(0xFF000000),
+                      color: mainColor,
                       margin: EdgeInsets.all(50),
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -112,12 +112,12 @@ class HomeScreenState extends State<HomeScreen> {
                               style: TextStyle(
                                 fontFamily: quoteFont,
                                 fontSize: quoteSize,
-                                color: Color(0xFFFFFFFF)
+                                color: accentColor
                               )
                             ),
                           ),
                           new Divider(
-                            color: Color(0xFFFFFFFF),
+                            color: accentColor,
                             thickness: 1
                           ),
                           new Padding(
@@ -128,7 +128,7 @@ class HomeScreenState extends State<HomeScreen> {
                               style: TextStyle(
                                 fontFamily: quoteFont,
                                 fontSize: quoteSize,
-                                color: Color(0xFFFFFFFF)
+                                color: accentColor
                               )
                             )
                           ),
@@ -136,8 +136,6 @@ class HomeScreenState extends State<HomeScreen> {
                       )
                     )
                   )])
-
-
                 ]
               )
             );

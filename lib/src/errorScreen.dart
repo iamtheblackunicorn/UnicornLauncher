@@ -42,7 +42,7 @@ class ErrorScreenState extends State<ErrorScreen> {
                 size: miscScreenIconSize,
               ),
               new Text(
-                'Could not load apps!',
+                errorAppMessage,
                 textAlign: TextAlign.center,
                 style: TextStyle(
                   color: accentColor,
