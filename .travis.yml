@@ -1,12 +1,30 @@
-language: android
-dist: trusty
-android:
-  components:
-    - build-tools-31.0.0
-    - android-30
-    - extra
+#language: android
+#dist: trusty
+#android:
+#  components:
+#    - build-tools-31.0.0
+#    - android-30
+#    - extra
+#before_script:
+#  - "git clone https://github.com/flutter/flutter.git"
+#  - "export PATH="$PATH:flutter/.bin"
+#script:
+#  - "flutter --version"
+os: linux
+addons:
+  apt:
+    sources:
+      - ubuntu-toolchain-r-test
+    packages:
+      - libstdc++6
+      - fonts-droid-fallback
 before_script:
-  - "git clone https://github.com/flutter/flutter.git"
-  - "export PATH="$PATH:flutter/.bin"
+  - git clone https://github.com/flutter/flutter.git -b dev
+  - ./flutter/bin/flutter doctor
 script:
-  - "flutter --version"
+  - ./flutter/bin/flutter config --enable-linux-desktop
+  - ./flutter/bin/flutter doctor
+  - ./flutter/bin/flutter pub get
+cache:
+  directories:
+    - $HOME/.pub-cache
