@@ -1,15 +1,9 @@
-#language: android
-#dist: trusty
-#android:
-#  components:
-#    - build-tools-31.0.0
-#    - android-30
-#    - extra
-#before_script:
-#  - "git clone https://github.com/flutter/flutter.git"
-#  - "export PATH="$PATH:flutter/.bin"
-#script:
-#  - "flutter --version"
+language: android
+android:
+  components:
+    - build-tools-31.0.0
+    - android-30
+    - extra
 os: linux
 addons:
   apt:
@@ -18,6 +12,7 @@ addons:
     packages:
       - libstdc++6
       - fonts-droid-fallback
+      - wget
 before_script:
   - git clone https://github.com/flutter/flutter.git -b dev
   - ./flutter/bin/flutter doctor
