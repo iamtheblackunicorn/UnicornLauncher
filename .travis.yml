@@ -1,0 +1,11 @@
+language: android
+dist: trusty
+android:
+  components:
+    - build-tools-31.0.0
+    - android-30
+before_script:
+  - "git clone https://github.com/flutter/flutter.git"
+  - "export PATH="$PATH:flutter/.bin"
+script:
+  - "flutter --version"
