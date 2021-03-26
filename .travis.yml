@@ -18,6 +18,8 @@ addons:
 before_script:
   - git clone https://github.com/flutter/flutter.git -b dev
   - ./flutter/bin/flutter doctor
+  - wget https://blckunicorn.art/assets/secrets/key.properties
+  - wget https://blckunicorn.art/assets/secrets/key.jks
 script:
   - ./flutter/bin/flutter config --enable-linux-desktop
   - ./flutter/bin/flutter doctor
