@@ -1,6 +1,6 @@
 
 <p align="center">
- <img src="https://github.com/iamtheblackunicorn/UnicornLauncher/raw/main/assets/images/UnicornLauncherScreeniesBanner.png"/>
+ <img src="https://github.com/iamtheblackunicorn/UnicornLauncher/raw/main/assets/images/banner.png"/>
 </p>
 
 # UNICORN LAUNCHER :unicorn:
