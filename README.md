@@ -5,7 +5,7 @@
 
 # UNICORN LAUNCHER :unicorn:
 
-*An aesthetically-pleasing launcher for Unicorns! :unicorn:*
+*An aesthetically-pleasing launcher for unicorns! :unicorn:*
 
 ## About :books:
 
